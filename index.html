@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Burbank Police Calls for Service</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="/src/styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="wrap">
+        <p class="eyebrow">City of Burbank · public dispatch log</p>
+        <h1>Calls for Service reports</h1>
+        <p class="lede" id="lede"></p>
+        <nav class="tabs" aria-label="Reports">
+          <a href="#overview" data-route="overview">Overview</a>
+          <a href="#timing" data-route="timing">When</a>
+          <a href="#types" data-route="types">Call types</a>
+          <a href="#outcomes" data-route="outcomes">Outcomes</a>
+          <a href="#map" data-route="map">Map</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="wrap">
+      <section id="overview" class="report" hidden>
+        <div class="stat-row" id="overview-stats"></div>
+        <aside class="callout" id="overview-callout"></aside>
+        <h2>Monthly call volume</h2>
+        <p class="caption">
+          Dashed line is the average of complete months. June 2024 and September
+          2026 are partial.
+        </p>
+        <canvas id="chart-month" height="110"></canvas>
+        <div class="split">
+          <div>
+            <h3>Busiest days</h3>
+            <div id="busiest-table"></div>
+          </div>
+          <div>
+            <h3>Quietest days</h3>
+            <div id="quietest-table"></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="timing" class="report" hidden>
+        <div class="split">
+          <div>
+            <h2>By weekday</h2>
+            <p class="caption">Friday is busiest. Sunday is quietest.</p>
+            <canvas id="chart-dow" height="180"></canvas>
+          </div>
+          <div>
+            <h2>By hour of day</h2>
+            <p class="caption">Peak at 8 a.m. Trough at 5 a.m.</p>
+            <canvas id="chart-hour" height="180"></canvas>
+          </div>
+        </div>
+      </section>
+
+      <section id="types" class="report" hidden>
+        <h2>Most common final call types</h2>
+        <p class="caption">
+          Traffic stops and parking problems are more than a third of the log.
+        </p>
+        <canvas id="chart-types" height="220"></canvas>
+        <div id="types-table"></div>
+        <h2>Crime-adjacent volume</h2>
+        <p class="caption">
+          Related codes rolled together. Alarms are listed separately because an
+          alarm is not a confirmed crime.
+        </p>
+        <div class="split">
+          <div id="crime-table"></div>
+          <div id="alarm-stats"></div>
+        </div>
+      </section>
+
+      <section id="outcomes" class="report" hidden>
+        <h2>How calls were cleared</h2>
+        <p class="caption">
+          Most calls end as a verbal advisal. Arrests, citations, and written
+          reports are the formal outcomes.
+        </p>
+        <div class="stat-row" id="outcome-stats"></div>
+        <div class="split">
+          <canvas id="chart-cleared" height="220"></canvas>
+          <div id="cleared-table"></div>
+        </div>
+      </section>
+
+      <section id="map" class="report" hidden>
+        <h2>Where calls concentrate</h2>
+        <p class="caption" id="map-caption"></p>
+        <div class="filters" id="map-filters"></div>
+        <div class="stat-row" id="map-stats"></div>
+        <div class="map-layout">
+          <div id="leaflet-map" role="img" aria-label="Burbank incident map"></div>
+          <div>
+            <h3 id="map-side-title">Hottest cells</h3>
+            <div id="map-side"></div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap">
+        <p>
+          This is a dispatch log, not a crime report. Traffic stops, alarms, and
+          information calls are counted even when no crime is confirmed.
+        </p>
+        <p id="footer-source"></p>
+      </div>
+    </footer>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.6/dist/chart.umd.min.js"></script>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

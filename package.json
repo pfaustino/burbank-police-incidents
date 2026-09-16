@@ -1,0 +1,14 @@
+{
+  "name": "burbank-police-incidents",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "data": "python scripts/build-data.py"
+  },
+  "devDependencies": {
+    "vite": "^8.3.0"
+  }
+}
