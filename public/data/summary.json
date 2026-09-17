@@ -1,581 +1,1156 @@
 {
   "source": "Calls For Service Incidents 6-24-2024 to 9-8-2026 - Sheet1.tsv",
-  "total": 149732,
-  "uniqueDays": 807,
-  "avgPerDay": 185.5,
-  "uniqueTypes": 192,
-  "uniqueAddresses": 10252,
-  "testCalls": 246,
   "dateMin": "2024-06-24",
   "dateMax": "2026-09-08",
-  "byYear": {
-    "2024": 34169,
-    "2025": 66193,
-    "2026": 49370
+  "incidental": {
+    "trafficStops": 41490,
+    "parking": 14191,
+    "total": 55681
   },
-  "janAug2025": 44563,
-  "janAug2026": 47590,
-  "months": {
-    "labels": [
-      "2024-06",
-      "2024-07",
-      "2024-08",
-      "2024-09",
-      "2024-10",
-      "2024-11",
-      "2024-12",
-      "2025-01",
-      "2025-02",
-      "2025-03",
-      "2025-04",
-      "2025-05",
-      "2025-06",
-      "2025-07",
-      "2025-08",
-      "2025-09",
-      "2025-10",
-      "2025-11",
-      "2025-12",
-      "2026-01",
-      "2026-02",
-      "2026-03",
-      "2026-04",
-      "2026-05",
-      "2026-06",
-      "2026-07",
-      "2026-08",
-      "2026-09"
+  "all": {
+    "total": 149732,
+    "uniqueDays": 807,
+    "avgPerDay": 185.5,
+    "uniqueTypes": 192,
+    "uniqueAddresses": 10252,
+    "testCalls": 246,
+    "byYear": {
+      "2024": 34169,
+      "2025": 66193,
+      "2026": 49370
+    },
+    "janAug2025": 44563,
+    "janAug2026": 47590,
+    "months": {
+      "labels": [
+        "2024-06",
+        "2024-07",
+        "2024-08",
+        "2024-09",
+        "2024-10",
+        "2024-11",
+        "2024-12",
+        "2025-01",
+        "2025-02",
+        "2025-03",
+        "2025-04",
+        "2025-05",
+        "2025-06",
+        "2025-07",
+        "2025-08",
+        "2025-09",
+        "2025-10",
+        "2025-11",
+        "2025-12",
+        "2026-01",
+        "2026-02",
+        "2026-03",
+        "2026-04",
+        "2026-05",
+        "2026-06",
+        "2026-07",
+        "2026-08",
+        "2026-09"
+      ],
+      "values": [
+        1273,
+        5720,
+        5680,
+        5588,
+        6142,
+        4823,
+        4943,
+        5478,
+        4657,
+        5292,
+        5456,
+        5919,
+        5592,
+        6051,
+        6118,
+        5925,
+        6037,
+        4777,
+        4891,
+        5532,
+        5265,
+        5549,
+        5523,
+        6320,
+        6188,
+        6427,
+        6786,
+        1780
+      ],
+      "completeMonthAvg": 5642
+    },
+    "weekday": {
+      "labels": [
+        "Mon",
+        "Tue",
+        "Wed",
+        "Thu",
+        "Fri",
+        "Sat",
+        "Sun"
+      ],
+      "values": [
+        21036,
+        22234,
+        22463,
+        22923,
+        24174,
+        20949,
+        15953
+      ]
+    },
+    "hour": {
+      "labels": [
+        "12a",
+        "1a",
+        "2a",
+        "3a",
+        "4a",
+        "5a",
+        "6a",
+        "7a",
+        "8a",
+        "9a",
+        "10a",
+        "11a",
+        "12p",
+        "1p",
+        "2p",
+        "3p",
+        "4p",
+        "5p",
+        "6p",
+        "7p",
+        "8p",
+        "9p",
+        "10p",
+        "11p"
+      ],
+      "values": [
+        4767,
+        3873,
+        3166,
+        2619,
+        2208,
+        1736,
+        3258,
+        6085,
+        8855,
+        8409,
+        8637,
+        8675,
+        8157,
+        7899,
+        8135,
+        7783,
+        7235,
+        6434,
+        7106,
+        7654,
+        7354,
+        7210,
+        6835,
+        5642
+      ]
+    },
+    "topTypes": [
+      {
+        "label": "TRAFFIC STOP",
+        "count": 41490
+      },
+      {
+        "label": "PARKING PROBLEM",
+        "count": 14191
+      },
+      {
+        "label": "DISTURBANCE OF THE PEACE",
+        "count": 8662
+      },
+      {
+        "label": "AREA CHECK",
+        "count": 7562
+      },
+      {
+        "label": "INFORMATION ONLY",
+        "count": 7349
+      },
+      {
+        "label": "TRANSIENT RELATED",
+        "count": 5770
+      },
+      {
+        "label": "ADVISAL",
+        "count": 4397
+      },
+      {
+        "label": "SUBJECT STOP",
+        "count": 4252
+      },
+      {
+        "label": "CHECK WELL BEING",
+        "count": 4131
+      },
+      {
+        "label": "BUSINESS BURGLARY ALARM",
+        "count": 4031
+      },
+      {
+        "label": "TRAFFIC COLLISION PROPERTY DAMAGE OCCURRED",
+        "count": 3248
+      },
+      {
+        "label": "1010 STOP",
+        "count": 3093
+      },
+      {
+        "label": "ASSIST",
+        "count": 2052
+      },
+      {
+        "label": "SUSPICIOUS SUBJECT",
+        "count": 1981
+      },
+      {
+        "label": "FOLLOW-UP REPORT",
+        "count": 1892
+      },
+      {
+        "label": "PETTY THEFT JUST OCCURRED",
+        "count": 1832
+      },
+      {
+        "label": "ANIMAL SHELTER",
+        "count": 1774
+      },
+      {
+        "label": "TRANSPORTATION",
+        "count": 1729
+      },
+      {
+        "label": "SUSPICIOUS CIRCUMSTANCES",
+        "count": 1512
+      },
+      {
+        "label": "PETTY THEFT REPORT",
+        "count": 1507
+      }
     ],
-    "values": [
-      1273,
-      5720,
-      5680,
-      5588,
-      6142,
-      4823,
-      4943,
-      5478,
-      4657,
-      5292,
-      5456,
-      5919,
-      5592,
-      6051,
-      6118,
-      5925,
-      6037,
-      4777,
-      4891,
-      5532,
-      5265,
-      5549,
-      5523,
-      6320,
-      6188,
-      6427,
-      6786,
-      1780
+    "crimeGroups": [
+      {
+        "label": "Petty theft (occurred, report, in progress)",
+        "count": 3520
+      },
+      {
+        "label": "Battery (occurred, report, in progress)",
+        "count": 899
+      },
+      {
+        "label": "Stolen vehicle report",
+        "count": 944
+      },
+      {
+        "label": "Identity theft report",
+        "count": 842
+      },
+      {
+        "label": "Vandalism (report, occurred, in progress)",
+        "count": 855
+      },
+      {
+        "label": "Grand theft report",
+        "count": 753
+      },
+      {
+        "label": "Vehicle burglary report",
+        "count": 600
+      },
+      {
+        "label": "Residential burglary report / in progress",
+        "count": 292
+      },
+      {
+        "label": "Business burglary report / in progress",
+        "count": 217
+      },
+      {
+        "label": "Robbery (occurred + report)",
+        "count": 123
+      },
+      {
+        "label": "ADW in progress / report",
+        "count": 144
+      },
+      {
+        "label": "Shots fired just occurred",
+        "count": 58
+      }
     ],
-    "completeMonthAvg": 5642
-  },
-  "weekday": {
-    "labels": [
-      "Mon",
-      "Tue",
-      "Wed",
-      "Thu",
-      "Fri",
-      "Sat",
-      "Sun"
+    "alarms": {
+      "business": 4031,
+      "residential": 1487
+    },
+    "cleared": [
+      {
+        "label": "ADVISED",
+        "count": 43422
+      },
+      {
+        "label": "CITED",
+        "count": 22293
+      },
+      {
+        "label": "OTHER",
+        "count": 15516
+      },
+      {
+        "label": "NO EVIDENCE OF CRIME",
+        "count": 11592
+      },
+      {
+        "label": "REPORT",
+        "count": 11245
+      },
+      {
+        "label": "GONE ON ARRIVAL",
+        "count": 8470
+      },
+      {
+        "label": "ARREST MADE",
+        "count": 6674
+      },
+      {
+        "label": "ASSIST",
+        "count": 5676
+      },
+      {
+        "label": "CHECKED OK",
+        "count": 4158
+      },
+      {
+        "label": "CANCELLED BY INFORMANT",
+        "count": 3540
+      },
+      {
+        "label": "COMPLETE",
+        "count": 3203
+      },
+      {
+        "label": "SENT ON WAY",
+        "count": 2711
+      },
+      {
+        "label": "UNABLE TO LOCATE",
+        "count": 2302
+      },
+      {
+        "label": "REFERRED TO OUTSIDE AGENCY",
+        "count": 2166
+      },
+      {
+        "label": "MARKED",
+        "count": 2147
+      },
+      {
+        "label": "INFORMATION EXCHANGED",
+        "count": 1531
+      },
+      {
+        "label": "QUIET ON ARRIVAL",
+        "count": 1022
+      },
+      {
+        "label": "INCIDENT NUMBER PROVIDED",
+        "count": 571
+      },
+      {
+        "label": "LOG ITEM ONLY",
+        "count": 481
+      },
+      {
+        "label": "NO REPORT DESIRED",
+        "count": 480
+      },
+      {
+        "label": "FIELD INTERVIEWED AND RELEASED",
+        "count": 303
+      },
+      {
+        "label": "FIRST RESPONSE GIVEN",
+        "count": 103
+      },
+      {
+        "label": "SECOND RESPONSE GIVEN",
+        "count": 63
+      },
+      {
+        "label": "OUT OF CITY",
+        "count": 49
+      },
+      {
+        "label": "AIRPORT REPORT",
+        "count": 14
+      }
     ],
-    "values": [
-      21036,
-      22234,
-      22463,
-      22923,
-      24174,
-      20949,
-      15953
+    "topAddresses": [
+      {
+        "label": "200 N THIRD ST",
+        "count": 3564,
+        "note": "Police station \u2014 transports, advisals, tests"
+      },
+      {
+        "label": "1300 N VICTORY PL",
+        "count": 2465,
+        "note": "Heavy petty-theft and traffic-stop volume"
+      },
+      {
+        "label": "2600 N HOLLYWOOD WAY",
+        "count": 1674,
+        "note": "Hollywood Burbank Airport"
+      },
+      {
+        "label": "1000 W BURBANK BLVD",
+        "count": 866,
+        "note": ""
+      },
+      {
+        "label": "500 S BUENA VISTA ST",
+        "count": 794,
+        "note": ""
+      },
+      {
+        "label": "1800 EMPIRE AVE",
+        "count": 789,
+        "note": ""
+      },
+      {
+        "label": "900 N THIRD ST",
+        "count": 737,
+        "note": ""
+      },
+      {
+        "label": "1800 N BEL AIRE DR",
+        "count": 594,
+        "note": ""
+      },
+      {
+        "label": "1600 N VICTORY PL",
+        "count": 592,
+        "note": ""
+      },
+      {
+        "label": "2500 N HOLLYWOOD WAY",
+        "count": 586,
+        "note": "Airport-adjacent"
+      },
+      {
+        "label": "200 E MAGNOLIA BLVD",
+        "count": 552,
+        "note": ""
+      },
+      {
+        "label": "N GLENOAKS BLVD / E GRINNELL DR",
+        "count": 532,
+        "note": ""
+      },
+      {
+        "label": "1800 W EMPIRE AVE",
+        "count": 520,
+        "note": ""
+      },
+      {
+        "label": "0 E ALAMEDA AVE",
+        "count": 519,
+        "note": ""
+      },
+      {
+        "label": "1000 N SAN FERNANDO BLVD",
+        "count": 478,
+        "note": ""
+      }
+    ],
+    "topStreets": [
+      {
+        "label": "N THIRD ST",
+        "count": 4685
+      },
+      {
+        "label": "N HOLLYWOOD WAY",
+        "count": 4592
+      },
+      {
+        "label": "N VICTORY PL",
+        "count": 4156
+      },
+      {
+        "label": "N SAN FERNANDO BLVD",
+        "count": 3532
+      },
+      {
+        "label": "W OLIVE AVE",
+        "count": 3072
+      },
+      {
+        "label": "W BURBANK BLVD",
+        "count": 2588
+      },
+      {
+        "label": "W MAGNOLIA BLVD",
+        "count": 2247
+      },
+      {
+        "label": "W VICTORY BLVD",
+        "count": 1924
+      },
+      {
+        "label": "N GLENOAKS BLVD",
+        "count": 1774
+      },
+      {
+        "label": "EMPIRE AVE",
+        "count": 1565
+      },
+      {
+        "label": "W ALAMEDA AVE",
+        "count": 1538
+      },
+      {
+        "label": "W EMPIRE AVE",
+        "count": 1531
+      },
+      {
+        "label": "N VICTORY BLVD",
+        "count": 1455
+      },
+      {
+        "label": "N BUENA VISTA ST",
+        "count": 1434
+      },
+      {
+        "label": "W VERDUGO AVE",
+        "count": 1323
+      }
+    ],
+    "busiestDays": [
+      {
+        "date": "2025-01-07",
+        "count": 369
+      },
+      {
+        "date": "2026-08-13",
+        "count": 332
+      },
+      {
+        "date": "2024-11-01",
+        "count": 291
+      },
+      {
+        "date": "2025-09-09",
+        "count": 279
+      },
+      {
+        "date": "2024-10-18",
+        "count": 273
+      }
+    ],
+    "quietestDays": [
+      {
+        "date": "2025-11-23",
+        "count": 81
+      },
+      {
+        "date": "2025-12-25",
+        "count": 84
+      },
+      {
+        "date": "2025-11-09",
+        "count": 88
+      },
+      {
+        "date": "2025-11-27",
+        "count": 90
+      },
+      {
+        "date": "2024-12-25",
+        "count": 92
+      }
     ]
   },
-  "hour": {
-    "labels": [
-      "12a",
-      "1a",
-      "2a",
-      "3a",
-      "4a",
-      "5a",
-      "6a",
-      "7a",
-      "8a",
-      "9a",
-      "10a",
-      "11a",
-      "12p",
-      "1p",
-      "2p",
-      "3p",
-      "4p",
-      "5p",
-      "6p",
-      "7p",
-      "8p",
-      "9p",
-      "10p",
-      "11p"
+  "core": {
+    "total": 94051,
+    "uniqueDays": 807,
+    "avgPerDay": 116.5,
+    "uniqueTypes": 190,
+    "uniqueAddresses": 7830,
+    "testCalls": 246,
+    "byYear": {
+      "2024": 22877,
+      "2025": 41009,
+      "2026": 30165
+    },
+    "janAug2025": 27654,
+    "janAug2026": 29119,
+    "months": {
+      "labels": [
+        "2024-06",
+        "2024-07",
+        "2024-08",
+        "2024-09",
+        "2024-10",
+        "2024-11",
+        "2024-12",
+        "2025-01",
+        "2025-02",
+        "2025-03",
+        "2025-04",
+        "2025-05",
+        "2025-06",
+        "2025-07",
+        "2025-08",
+        "2025-09",
+        "2025-10",
+        "2025-11",
+        "2025-12",
+        "2026-01",
+        "2026-02",
+        "2026-03",
+        "2026-04",
+        "2026-05",
+        "2026-06",
+        "2026-07",
+        "2026-08",
+        "2026-09"
+      ],
+      "values": [
+        923,
+        3952,
+        3742,
+        3784,
+        3692,
+        3443,
+        3341,
+        3560,
+        3025,
+        3371,
+        3374,
+        3690,
+        3481,
+        3681,
+        3472,
+        3486,
+        3684,
+        2976,
+        3209,
+        3213,
+        3181,
+        3469,
+        3482,
+        3844,
+        3942,
+        3898,
+        4090,
+        1046
+      ],
+      "completeMonthAvg": 3542
+    },
+    "weekday": {
+      "labels": [
+        "Mon",
+        "Tue",
+        "Wed",
+        "Thu",
+        "Fri",
+        "Sat",
+        "Sun"
+      ],
+      "values": [
+        13569,
+        13842,
+        13659,
+        13767,
+        14343,
+        13464,
+        11407
+      ]
+    },
+    "hour": {
+      "labels": [
+        "12a",
+        "1a",
+        "2a",
+        "3a",
+        "4a",
+        "5a",
+        "6a",
+        "7a",
+        "8a",
+        "9a",
+        "10a",
+        "11a",
+        "12p",
+        "1p",
+        "2p",
+        "3p",
+        "4p",
+        "5p",
+        "6p",
+        "7p",
+        "8p",
+        "9p",
+        "10p",
+        "11p"
+      ],
+      "values": [
+        2959,
+        2179,
+        1770,
+        1548,
+        1362,
+        1500,
+        2208,
+        3102,
+        4037,
+        4236,
+        4603,
+        4958,
+        5076,
+        5021,
+        5297,
+        5231,
+        5267,
+        5016,
+        5361,
+        5326,
+        4977,
+        4786,
+        4626,
+        3605
+      ]
+    },
+    "topTypes": [
+      {
+        "label": "DISTURBANCE OF THE PEACE",
+        "count": 8662
+      },
+      {
+        "label": "AREA CHECK",
+        "count": 7562
+      },
+      {
+        "label": "INFORMATION ONLY",
+        "count": 7349
+      },
+      {
+        "label": "TRANSIENT RELATED",
+        "count": 5770
+      },
+      {
+        "label": "ADVISAL",
+        "count": 4397
+      },
+      {
+        "label": "SUBJECT STOP",
+        "count": 4252
+      },
+      {
+        "label": "CHECK WELL BEING",
+        "count": 4131
+      },
+      {
+        "label": "BUSINESS BURGLARY ALARM",
+        "count": 4031
+      },
+      {
+        "label": "TRAFFIC COLLISION PROPERTY DAMAGE OCCURRED",
+        "count": 3248
+      },
+      {
+        "label": "1010 STOP",
+        "count": 3093
+      },
+      {
+        "label": "ASSIST",
+        "count": 2052
+      },
+      {
+        "label": "SUSPICIOUS SUBJECT",
+        "count": 1981
+      },
+      {
+        "label": "FOLLOW-UP REPORT",
+        "count": 1892
+      },
+      {
+        "label": "PETTY THEFT JUST OCCURRED",
+        "count": 1832
+      },
+      {
+        "label": "ANIMAL SHELTER",
+        "count": 1774
+      },
+      {
+        "label": "TRANSPORTATION",
+        "count": 1729
+      },
+      {
+        "label": "SUSPICIOUS CIRCUMSTANCES",
+        "count": 1512
+      },
+      {
+        "label": "PETTY THEFT REPORT",
+        "count": 1507
+      },
+      {
+        "label": "MISCELLANEOUS INVESTIGATION",
+        "count": 1504
+      },
+      {
+        "label": "RESIDENTIAL BURGLARY ALARM",
+        "count": 1487
+      }
     ],
-    "values": [
-      4767,
-      3873,
-      3166,
-      2619,
-      2208,
-      1736,
-      3258,
-      6085,
-      8855,
-      8409,
-      8637,
-      8675,
-      8157,
-      7899,
-      8135,
-      7783,
-      7235,
-      6434,
-      7106,
-      7654,
-      7354,
-      7210,
-      6835,
-      5642
+    "crimeGroups": [
+      {
+        "label": "Petty theft (occurred, report, in progress)",
+        "count": 3520
+      },
+      {
+        "label": "Battery (occurred, report, in progress)",
+        "count": 899
+      },
+      {
+        "label": "Stolen vehicle report",
+        "count": 944
+      },
+      {
+        "label": "Identity theft report",
+        "count": 842
+      },
+      {
+        "label": "Vandalism (report, occurred, in progress)",
+        "count": 855
+      },
+      {
+        "label": "Grand theft report",
+        "count": 753
+      },
+      {
+        "label": "Vehicle burglary report",
+        "count": 600
+      },
+      {
+        "label": "Residential burglary report / in progress",
+        "count": 292
+      },
+      {
+        "label": "Business burglary report / in progress",
+        "count": 217
+      },
+      {
+        "label": "Robbery (occurred + report)",
+        "count": 123
+      },
+      {
+        "label": "ADW in progress / report",
+        "count": 144
+      },
+      {
+        "label": "Shots fired just occurred",
+        "count": 58
+      }
+    ],
+    "alarms": {
+      "business": 4031,
+      "residential": 1487
+    },
+    "cleared": [
+      {
+        "label": "ADVISED",
+        "count": 20813
+      },
+      {
+        "label": "OTHER",
+        "count": 13006
+      },
+      {
+        "label": "NO EVIDENCE OF CRIME",
+        "count": 10816
+      },
+      {
+        "label": "REPORT",
+        "count": 10696
+      },
+      {
+        "label": "GONE ON ARRIVAL",
+        "count": 6515
+      },
+      {
+        "label": "ASSIST",
+        "count": 5347
+      },
+      {
+        "label": "ARREST MADE",
+        "count": 4604
+      },
+      {
+        "label": "CHECKED OK",
+        "count": 3912
+      },
+      {
+        "label": "COMPLETE",
+        "count": 3104
+      },
+      {
+        "label": "CANCELLED BY INFORMANT",
+        "count": 2987
+      },
+      {
+        "label": "SENT ON WAY",
+        "count": 2526
+      },
+      {
+        "label": "UNABLE TO LOCATE",
+        "count": 2261
+      },
+      {
+        "label": "REFERRED TO OUTSIDE AGENCY",
+        "count": 2146
+      },
+      {
+        "label": "INFORMATION EXCHANGED",
+        "count": 1514
+      },
+      {
+        "label": "QUIET ON ARRIVAL",
+        "count": 1022
+      },
+      {
+        "label": "CITED",
+        "count": 880
+      },
+      {
+        "label": "INCIDENT NUMBER PROVIDED",
+        "count": 562
+      },
+      {
+        "label": "LOG ITEM ONLY",
+        "count": 481
+      },
+      {
+        "label": "NO REPORT DESIRED",
+        "count": 475
+      },
+      {
+        "label": "FIELD INTERVIEWED AND RELEASED",
+        "count": 142
+      },
+      {
+        "label": "FIRST RESPONSE GIVEN",
+        "count": 95
+      },
+      {
+        "label": "SECOND RESPONSE GIVEN",
+        "count": 60
+      },
+      {
+        "label": "OUT OF CITY",
+        "count": 47
+      },
+      {
+        "label": "MARKED",
+        "count": 26
+      },
+      {
+        "label": "AIRPORT REPORT",
+        "count": 14
+      }
+    ],
+    "topAddresses": [
+      {
+        "label": "200 N THIRD ST",
+        "count": 3524,
+        "note": "Police station \u2014 transports, advisals, tests"
+      },
+      {
+        "label": "1300 N VICTORY PL",
+        "count": 1645,
+        "note": "Heavy petty-theft and traffic-stop volume"
+      },
+      {
+        "label": "2600 N HOLLYWOOD WAY",
+        "count": 1609,
+        "note": "Hollywood Burbank Airport"
+      },
+      {
+        "label": "500 S BUENA VISTA ST",
+        "count": 773,
+        "note": ""
+      },
+      {
+        "label": "1800 EMPIRE AVE",
+        "count": 679,
+        "note": ""
+      },
+      {
+        "label": "1600 N VICTORY PL",
+        "count": 554,
+        "note": ""
+      },
+      {
+        "label": "200 E MAGNOLIA BLVD",
+        "count": 535,
+        "note": ""
+      },
+      {
+        "label": "1000 W BURBANK BLVD",
+        "count": 521,
+        "note": ""
+      },
+      {
+        "label": "2500 N HOLLYWOOD WAY",
+        "count": 512,
+        "note": "Airport-adjacent"
+      },
+      {
+        "label": "900 N THIRD ST",
+        "count": 455,
+        "note": ""
+      },
+      {
+        "label": "1800 W EMPIRE AVE",
+        "count": 455,
+        "note": ""
+      },
+      {
+        "label": "1100 N SAN FERNANDO BLVD",
+        "count": 411,
+        "note": ""
+      },
+      {
+        "label": "10900 SHERMAN WAY",
+        "count": 402,
+        "note": ""
+      },
+      {
+        "label": "1000 N SAN FERNANDO BLVD",
+        "count": 382,
+        "note": ""
+      },
+      {
+        "label": "100 E PALM AVE",
+        "count": 381,
+        "note": ""
+      }
+    ],
+    "topStreets": [
+      {
+        "label": "N THIRD ST",
+        "count": 4267
+      },
+      {
+        "label": "N HOLLYWOOD WAY",
+        "count": 3883
+      },
+      {
+        "label": "N VICTORY PL",
+        "count": 3072
+      },
+      {
+        "label": "N SAN FERNANDO BLVD",
+        "count": 2746
+      },
+      {
+        "label": "W OLIVE AVE",
+        "count": 2664
+      },
+      {
+        "label": "W MAGNOLIA BLVD",
+        "count": 1928
+      },
+      {
+        "label": "W BURBANK BLVD",
+        "count": 1753
+      },
+      {
+        "label": "W VICTORY BLVD",
+        "count": 1529
+      },
+      {
+        "label": "W EMPIRE AVE",
+        "count": 1282
+      },
+      {
+        "label": "EMPIRE AVE",
+        "count": 1277
+      },
+      {
+        "label": "N GLENOAKS BLVD",
+        "count": 1276
+      },
+      {
+        "label": "N BUENA VISTA ST",
+        "count": 1237
+      },
+      {
+        "label": "W ALAMEDA AVE",
+        "count": 1226
+      },
+      {
+        "label": "W VERDUGO AVE",
+        "count": 1173
+      },
+      {
+        "label": "E MAGNOLIA BLVD",
+        "count": 988
+      }
+    ],
+    "busiestDays": [
+      {
+        "date": "2025-01-07",
+        "count": 340
+      },
+      {
+        "date": "2026-09-01",
+        "count": 179
+      },
+      {
+        "date": "2024-07-04",
+        "count": 173
+      },
+      {
+        "date": "2024-08-14",
+        "count": 169
+      },
+      {
+        "date": "2025-07-04",
+        "count": 169
+      }
+    ],
+    "quietestDays": [
+      {
+        "date": "2025-12-25",
+        "count": 56
+      },
+      {
+        "date": "2025-11-09",
+        "count": 65
+      },
+      {
+        "date": "2025-11-23",
+        "count": 66
+      },
+      {
+        "date": "2024-12-25",
+        "count": 69
+      },
+      {
+        "date": "2025-11-27",
+        "count": 71
+      }
     ]
-  },
-  "topTypes": [
-    {
-      "label": "TRAFFIC STOP",
-      "count": 41490
-    },
-    {
-      "label": "PARKING PROBLEM",
-      "count": 14191
-    },
-    {
-      "label": "DISTURBANCE OF THE PEACE",
-      "count": 8662
-    },
-    {
-      "label": "AREA CHECK",
-      "count": 7562
-    },
-    {
-      "label": "INFORMATION ONLY",
-      "count": 7349
-    },
-    {
-      "label": "TRANSIENT RELATED",
-      "count": 5770
-    },
-    {
-      "label": "ADVISAL",
-      "count": 4397
-    },
-    {
-      "label": "SUBJECT STOP",
-      "count": 4252
-    },
-    {
-      "label": "CHECK WELL BEING",
-      "count": 4131
-    },
-    {
-      "label": "BUSINESS BURGLARY ALARM",
-      "count": 4031
-    },
-    {
-      "label": "TRAFFIC COLLISION PROPERTY DAMAGE OCCURRED",
-      "count": 3248
-    },
-    {
-      "label": "1010 STOP",
-      "count": 3093
-    },
-    {
-      "label": "ASSIST",
-      "count": 2052
-    },
-    {
-      "label": "SUSPICIOUS SUBJECT",
-      "count": 1981
-    },
-    {
-      "label": "FOLLOW-UP REPORT",
-      "count": 1892
-    },
-    {
-      "label": "PETTY THEFT JUST OCCURRED",
-      "count": 1832
-    },
-    {
-      "label": "ANIMAL SHELTER",
-      "count": 1774
-    },
-    {
-      "label": "TRANSPORTATION",
-      "count": 1729
-    },
-    {
-      "label": "SUSPICIOUS CIRCUMSTANCES",
-      "count": 1512
-    },
-    {
-      "label": "PETTY THEFT REPORT",
-      "count": 1507
-    }
-  ],
-  "crimeGroups": [
-    {
-      "label": "Petty theft (occurred, report, in progress)",
-      "count": 3520
-    },
-    {
-      "label": "Battery (occurred, report, in progress)",
-      "count": 899
-    },
-    {
-      "label": "Stolen vehicle report",
-      "count": 944
-    },
-    {
-      "label": "Identity theft report",
-      "count": 842
-    },
-    {
-      "label": "Vandalism (report, occurred, in progress)",
-      "count": 855
-    },
-    {
-      "label": "Grand theft report",
-      "count": 753
-    },
-    {
-      "label": "Vehicle burglary report",
-      "count": 600
-    },
-    {
-      "label": "Residential burglary report / in progress",
-      "count": 292
-    },
-    {
-      "label": "Business burglary report / in progress",
-      "count": 217
-    },
-    {
-      "label": "Robbery (occurred + report)",
-      "count": 123
-    },
-    {
-      "label": "ADW in progress / report",
-      "count": 144
-    },
-    {
-      "label": "Shots fired just occurred",
-      "count": 58
-    }
-  ],
-  "alarms": {
-    "business": 4031,
-    "residential": 1487
-  },
-  "cleared": [
-    {
-      "label": "ADVISED",
-      "count": 43422
-    },
-    {
-      "label": "CITED",
-      "count": 22293
-    },
-    {
-      "label": "OTHER",
-      "count": 15516
-    },
-    {
-      "label": "NO EVIDENCE OF CRIME",
-      "count": 11592
-    },
-    {
-      "label": "REPORT",
-      "count": 11245
-    },
-    {
-      "label": "GONE ON ARRIVAL",
-      "count": 8470
-    },
-    {
-      "label": "ARREST MADE",
-      "count": 6674
-    },
-    {
-      "label": "ASSIST",
-      "count": 5676
-    },
-    {
-      "label": "CHECKED OK",
-      "count": 4158
-    },
-    {
-      "label": "CANCELLED BY INFORMANT",
-      "count": 3540
-    },
-    {
-      "label": "COMPLETE",
-      "count": 3203
-    },
-    {
-      "label": "SENT ON WAY",
-      "count": 2711
-    },
-    {
-      "label": "UNABLE TO LOCATE",
-      "count": 2302
-    },
-    {
-      "label": "REFERRED TO OUTSIDE AGENCY",
-      "count": 2166
-    },
-    {
-      "label": "MARKED",
-      "count": 2147
-    },
-    {
-      "label": "INFORMATION EXCHANGED",
-      "count": 1531
-    },
-    {
-      "label": "QUIET ON ARRIVAL",
-      "count": 1022
-    },
-    {
-      "label": "INCIDENT NUMBER PROVIDED",
-      "count": 571
-    },
-    {
-      "label": "LOG ITEM ONLY",
-      "count": 481
-    },
-    {
-      "label": "NO REPORT DESIRED",
-      "count": 480
-    },
-    {
-      "label": "FIELD INTERVIEWED AND RELEASED",
-      "count": 303
-    },
-    {
-      "label": "FIRST RESPONSE GIVEN",
-      "count": 103
-    },
-    {
-      "label": "SECOND RESPONSE GIVEN",
-      "count": 63
-    },
-    {
-      "label": "OUT OF CITY",
-      "count": 49
-    },
-    {
-      "label": "AIRPORT REPORT",
-      "count": 14
-    }
-  ],
-  "topAddresses": [
-    {
-      "label": "200 N THIRD ST",
-      "count": 3564,
-      "note": "Police station \u2014 transports, advisals, tests"
-    },
-    {
-      "label": "1300 N VICTORY PL",
-      "count": 2465,
-      "note": "Heavy petty-theft and traffic-stop volume"
-    },
-    {
-      "label": "2600 N HOLLYWOOD WAY",
-      "count": 1674,
-      "note": "Hollywood Burbank Airport"
-    },
-    {
-      "label": "1000 W BURBANK BLVD",
-      "count": 866,
-      "note": ""
-    },
-    {
-      "label": "500 S BUENA VISTA ST",
-      "count": 794,
-      "note": ""
-    },
-    {
-      "label": "1800 EMPIRE AVE",
-      "count": 789,
-      "note": ""
-    },
-    {
-      "label": "900 N THIRD ST",
-      "count": 737,
-      "note": ""
-    },
-    {
-      "label": "1800 N BEL AIRE DR",
-      "count": 594,
-      "note": ""
-    },
-    {
-      "label": "1600 N VICTORY PL",
-      "count": 592,
-      "note": ""
-    },
-    {
-      "label": "2500 N HOLLYWOOD WAY",
-      "count": 586,
-      "note": "Airport-adjacent"
-    },
-    {
-      "label": "200 E MAGNOLIA BLVD",
-      "count": 552,
-      "note": ""
-    },
-    {
-      "label": "N GLENOAKS BLVD / E GRINNELL DR",
-      "count": 532,
-      "note": ""
-    },
-    {
-      "label": "1800 W EMPIRE AVE",
-      "count": 520,
-      "note": ""
-    },
-    {
-      "label": "0 E ALAMEDA AVE",
-      "count": 519,
-      "note": ""
-    },
-    {
-      "label": "1000 N SAN FERNANDO BLVD",
-      "count": 478,
-      "note": ""
-    }
-  ],
-  "topStreets": [
-    {
-      "label": "N THIRD ST",
-      "count": 4685
-    },
-    {
-      "label": "N HOLLYWOOD WAY",
-      "count": 4592
-    },
-    {
-      "label": "N VICTORY PL",
-      "count": 4156
-    },
-    {
-      "label": "N SAN FERNANDO BLVD",
-      "count": 3532
-    },
-    {
-      "label": "W OLIVE AVE",
-      "count": 3072
-    },
-    {
-      "label": "W BURBANK BLVD",
-      "count": 2588
-    },
-    {
-      "label": "W MAGNOLIA BLVD",
-      "count": 2247
-    },
-    {
-      "label": "W VICTORY BLVD",
-      "count": 1924
-    },
-    {
-      "label": "N GLENOAKS BLVD",
-      "count": 1774
-    },
-    {
-      "label": "EMPIRE AVE",
-      "count": 1565
-    },
-    {
-      "label": "W ALAMEDA AVE",
-      "count": 1538
-    },
-    {
-      "label": "W EMPIRE AVE",
-      "count": 1531
-    },
-    {
-      "label": "N VICTORY BLVD",
-      "count": 1455
-    },
-    {
-      "label": "N BUENA VISTA ST",
-      "count": 1434
-    },
-    {
-      "label": "W VERDUGO AVE",
-      "count": 1323
-    }
-  ],
-  "busiestDays": [
-    {
-      "date": "2025-01-07",
-      "count": 369,
-      "note": "Highest single day in the file"
-    },
-    {
-      "date": "2026-08-13",
-      "count": 332,
-      "note": "Second-highest; 2026 summer peak"
-    },
-    {
-      "date": "2024-11-01",
-      "count": 291,
-      "note": ""
-    },
-    {
-      "date": "2025-09-09",
-      "count": 279,
-      "note": ""
-    },
-    {
-      "date": "2024-10-18",
-      "count": 273,
-      "note": ""
-    }
-  ],
-  "quietestDays": [
-    {
-      "date": "2025-11-23",
-      "count": 81
-    },
-    {
-      "date": "2025-12-25",
-      "count": 84
-    },
-    {
-      "date": "2025-11-09",
-      "count": 88
-    },
-    {
-      "date": "2025-11-27",
-      "count": 90
-    },
-    {
-      "date": "2024-12-25",
-      "count": 92
-    }
-  ]
+  }
 }

@@ -1,6 +1,6 @@
 const ROUTES = ["overview", "timing", "types", "outcomes", "map"];
-const CAT_KEYS = {
-  t: "Traffic",
+const CAT_KEYS_CORE = {
+  t: "Other traffic",
   d: "Disturbance",
   p: "Patrol",
   r: "Property",
@@ -9,6 +9,10 @@ const CAT_KEYS = {
   s: "Suspicious",
   v: "Person",
   o: "Other",
+};
+const CAT_KEYS_ALL = {
+  i: "Stops & parking",
+  ...CAT_KEYS_CORE,
 };
 
 const ink = "#1c2430";
@@ -19,6 +23,9 @@ let map;
 let mapLayer;
 let selectedCell = null;
 let mapReady = false;
+let includeIncidental = false;
+let summaryData;
+let mapData;
 
 const fmt = (n) => Number(n).toLocaleString("en-US");
 const pct = (n, total) => `${((n / total) * 100).toFixed(1)}%`;
@@ -100,11 +107,15 @@ function renderOverview(s) {
 
   const delta = s.janAug2026 - s.janAug2025;
   const deltaPct = ((delta / s.janAug2025) * 100).toFixed(1);
+  const aug = s.months.values[s.months.labels.indexOf("2026-08")];
+  const filterNote = includeIncidental
+    ? "This view includes traffic stops and parking problems."
+    : "Traffic stops and parking problems are excluded from this view.";
   document.getElementById("overview-callout").innerHTML = `
-    <strong>2026 is running hotter than 2025</strong>
-    January–August 2026 logged ${fmt(s.janAug2026)} calls, ${deltaPct}% above the
-    same months in 2025 (${fmt(s.janAug2025)}). August 2026 is the busiest
-    complete month (${fmt(s.months.values[s.months.labels.indexOf("2026-08")])}).
+    <strong>January–August 2026 vs 2025</strong>
+    ${fmt(s.janAug2026)} calls (${delta >= 0 ? "+" : ""}${deltaPct}% vs ${fmt(s.janAug2025)}).
+    August 2026 is the busiest complete month in this view (${fmt(aug)}).
+    ${filterNote}
   `;
 
   if (charts["chart-month"]) charts["chart-month"].destroy();
@@ -226,10 +237,10 @@ function renderOutcomes(s) {
 }
 
 function binValue(bin, year, cat, tod) {
-  if (year === "all" && cat === "all" && tod === "all") return bin.n;
   let sum = 0;
   for (const key of Object.keys(bin)) {
     if (key === "x" || key === "y" || key === "n") continue;
+    if (!includeIncidental && key[2] === "i") continue;
     if (year !== "all" && key.slice(0, 2) !== year) continue;
     if (cat !== "all" && key[2] !== cat) continue;
     if (tod !== "all" && key[3] !== tod) continue;
@@ -261,9 +272,10 @@ function currentFilters() {
 }
 
 function renderMapFilters() {
+  const cats = includeIncidental ? CAT_KEYS_ALL : CAT_KEYS_CORE;
   const groups = [
     ["year", [["all", "All years"], ["24", "2024"], ["25", "2025"], ["26", "2026"]]],
-    ["cat", [["all", "All types"], ...Object.entries(CAT_KEYS)]],
+    ["cat", [["all", "All types"], ...Object.entries(cats)]],
     ["tod", [["all", "Any hour"], ["D", "Day 6a–6p"], ["N", "Night"]]],
   ];
   document.getElementById("map-filters").innerHTML = groups
@@ -367,26 +379,54 @@ function showRoute(name, mapData) {
   if (route === "map") ensureMap(mapData);
 }
 
+function currentView() {
+  return includeIncidental ? summaryData.all : summaryData.core;
+}
+
+function renderAll() {
+  const s = currentView();
+  const inc = summaryData.incidental;
+  document.getElementById("lede").textContent =
+    `${fmt(s.total)} incidents from ${prettyDate(summaryData.dateMin)} through ${prettyDate(summaryData.dateMax)}` +
+    (includeIncidental
+      ? `, including ${fmt(inc.trafficStops)} traffic stops and ${fmt(inc.parking)} parking problems.`
+      : `, after removing ${fmt(inc.trafficStops)} traffic stops and ${fmt(inc.parking)} parking problems.`);
+  document.getElementById("scope-note").textContent = includeIncidental
+    ? "Showing every Final Call Type in the extract."
+    : "Default view drops only TRAFFIC STOP and PARKING PROBLEM. Collisions, 1010s, and the rest stay in.";
+  document.getElementById("footer-source").textContent =
+    `Source: ${summaryData.source} · ${fmt(summaryData.all.total)} rows in the extract · ` +
+    `${fmt(summaryData.all.testCalls)} TEST CALL rows left in the all-calls totals`;
+  document.getElementById("map-caption").textContent =
+    `${fmt(mapData.m)} calls geocoded into ~350-meter cells; ${fmt(mapData.u)} addresses would not place. ` +
+    `This map follows the same stops-and-parking toggle as the charts.`;
+
+  renderOverview(s);
+  renderTiming(s);
+  renderTypes(s);
+  renderOutcomes(s);
+  renderMapFilters();
+  if (mapReady) drawMap(mapData);
+}
+
 async function main() {
-  const [summary, mapData] = await Promise.all([
+  [summaryData, mapData] = await Promise.all([
     fetch("./data/summary.json").then((r) => r.json()),
     fetch("./data/map.json").then((r) => r.json()),
   ]);
 
-  document.getElementById("lede").textContent =
-    `${fmt(summary.total)} incidents from ${prettyDate(summary.dateMin)} through ${prettyDate(summary.dateMax)}. ` +
-    `Every calendar day in that span has at least one record.`;
-  document.getElementById("footer-source").textContent =
-    `Source: ${summary.source} · ${fmt(summary.total)} rows · ${fmt(summary.testCalls)} TEST CALL rows left in the totals`;
-  document.getElementById("map-caption").textContent =
-    `${fmt(mapData.m)} calls (95.2%) are mapped into ~350-meter cells. ` +
-    `${fmt(mapData.u)} addresses could not be placed. Filters combine.`;
-
-  renderOverview(summary);
-  renderTiming(summary);
-  renderTypes(summary);
-  renderOutcomes(summary);
-  renderMapFilters();
+  document.getElementById("scope-core").addEventListener("click", () => {
+    includeIncidental = false;
+    document.getElementById("scope-core").classList.add("active");
+    document.getElementById("scope-all").classList.remove("active");
+    renderAll();
+  });
+  document.getElementById("scope-all").addEventListener("click", () => {
+    includeIncidental = true;
+    document.getElementById("scope-all").classList.add("active");
+    document.getElementById("scope-core").classList.remove("active");
+    renderAll();
+  });
 
   document.getElementById("map-filters").addEventListener("click", (event) => {
     const btn = event.target.closest("button[data-filter]");
@@ -397,6 +437,7 @@ async function main() {
     if (mapReady) drawMap(mapData);
   });
 
+  renderAll();
   const apply = () => showRoute(location.hash.replace("#", ""), mapData);
   window.addEventListener("hashchange", apply);
   apply();

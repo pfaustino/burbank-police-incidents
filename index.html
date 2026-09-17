@@ -13,6 +13,11 @@
         <p class="eyebrow">City of Burbank · public dispatch log</p>
         <h1>Calls for Service reports</h1>
         <p class="lede" id="lede"></p>
+        <div class="scope" id="scope">
+          <button type="button" id="scope-core" class="active">Without stops &amp; parking</button>
+          <button type="button" id="scope-all">All calls</button>
+        </div>
+        <p class="scope-note" id="scope-note"></p>
         <nav class="tabs" aria-label="Reports">
           <a href="#overview" data-route="overview">Overview</a>
           <a href="#timing" data-route="timing">When</a>
@@ -63,7 +68,7 @@
       <section id="types" class="report" hidden>
         <h2>Most common final call types</h2>
         <p class="caption">
-          Traffic stops and parking problems are more than a third of the log.
+          Ranked by Final Call Type in the current view.
         </p>
         <canvas id="chart-types" height="220"></canvas>
         <div id="types-table"></div>
